@@ -322,7 +322,6 @@ void setup() {
 void draw() {
   noStroke();
   if (state == 0) {
-    saveFrame("main.png");
     frame.setSize(700, 623);
     frameRate(60);
     cp5.get(Button.class, "Watch_the_Skies").show();
@@ -451,7 +450,7 @@ void draw() {
     }
   }//Game end
   else if (state==2) {
-    saveFrame("physics.png");
+    saveFrame("physics1.png");
     frame.setSize(1200, 623);
     frameRate(3);
     cp5.get(Textfield.class, "Mass (Ball 1)").show();
