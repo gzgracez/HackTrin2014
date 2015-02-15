@@ -107,7 +107,7 @@ void setup() {
   h = hour();
   min = minute();
 
-  food = loadJSONArray("https://r-test.ordr.in/dl/0"+m+"-0"+d+"+"+h+":"+min+"/10024/New York/101 91st Street?_auth=1,MqhgExygRiqzkvlG37pCRXYt-265Nheo4JZb6xLwOj4");
+  //food = loadJSONArray("https://r-test.ordr.in/dl/0"+m+"-0"+d+"+"+h+":"+min+"/10024/New York/101 91st Street?_auth=1,MqhgExygRiqzkvlG37pCRXYt-265Nheo4JZb6xLwOj4");
 
 
   //JSONObject cu = food.getJSONObject("cu");
@@ -117,23 +117,23 @@ void setup() {
   //println(food);
 
 
-  for (int i = 0; i < food.size(); i++) {
-    if (food.getJSONObject(i).getString("na").equals("All American Pancake House (Brought to you by Cafe 82)")) {
-      food.remove(i);
-    }
-    if (food.getJSONObject(i).getString("na").equals("Giovanni's Italian Restaurant & Pizzeria")) {
-      food.remove(i);
-    }
-    println(food.getJSONObject(i).getString("na"));
-    if (food.getJSONObject(i).hasKey("cu")) {
-      println(food.getJSONObject(i).getJSONArray("cu"));
-      for (int m = 0; m < food.getJSONObject(i).getJSONArray("cu").size(); m++) {
-        for (int j = 0; j < cui.length; j++) {
-          cui[i] = food.getJSONObject(i).getJSONArray("cu").getString(m);
-        }
-      }
-    }
-  }
+  /*for (int i = 0; i < food.size(); i++) {
+   if (food.getJSONObject(i).getString("na").equals("All American Pancake House (Brought to you by Cafe 82)")) {
+   food.remove(i);
+   }
+   if (food.getJSONObject(i).getString("na").equals("Giovanni's Italian Restaurant & Pizzeria")) {
+   food.remove(i);
+   }
+   println(food.getJSONObject(i).getString("na"));
+   if (food.getJSONObject(i).hasKey("cu")) {
+   println(food.getJSONObject(i).getJSONArray("cu"));
+   for (int m = 0; m < food.getJSONObject(i).getJSONArray("cu").size(); m++) {
+   for (int j = 0; j < cui.length; j++) {
+   cui[i] = food.getJSONObject(i).getJSONArray("cu").getString(m);
+   }
+   }
+   }
+   }*/
 
 
   println(cui);
@@ -322,6 +322,7 @@ void setup() {
 void draw() {
   noStroke();
   if (state == 0) {
+    saveFrame("main.png");
     frame.setSize(700, 623);
     frameRate(60);
     cp5.get(Button.class, "Watch_the_Skies").show();
@@ -450,6 +451,7 @@ void draw() {
     }
   }//Game end
   else if (state==2) {
+    saveFrame("physics.png");
     frame.setSize(1200, 623);
     frameRate(3);
     cp5.get(Textfield.class, "Mass (Ball 1)").show();
@@ -1044,7 +1046,7 @@ void mouseClicked() {
       state=0;
     }
   }
-  else if (state==5){
+  else if (state==5) {
     if (mouseX>1075 && mouseX<1125 && mouseY>775 && mouseY<825) {//home
       state=0;
     }
