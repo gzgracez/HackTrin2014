@@ -3,6 +3,8 @@ import java.awt.BorderLayout;
 import controlP5.*;
 ControlP5 cp5;
 
+//int gifCount=0;
+
 int state = 0; //0 = home, 1 = game, 2 = physics, 3 = flappy bird, 4 = falling, 5 = orderin, 6 = essay
 
 ArrayList <Bogies> bogies = new ArrayList <Bogies>();
@@ -450,9 +452,10 @@ void draw() {
     }
   }//Game end
   else if (state==2) {
-    saveFrame("physics1.png");
     frame.setSize(1200, 623);
     frameRate(3);
+    //saveFrame("physics" + gifCount +".gif");
+    //gifCount++;
     cp5.get(Textfield.class, "Mass (Ball 1)").show();
     cp5.get(Textfield.class, "Gravity (Ball 1)").show();
     cp5.get(Textfield.class, "Velocity X (Ball 1)").show();

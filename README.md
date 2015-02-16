@@ -8,5 +8,5 @@ that uses ordr.in's API
 ![mainScreen](/main.png)
 _Main Screen_
 
-![physics](/physics1.png)
+![physics](/physicsDropInfinite.gif)
 _Physics (understanding projectile motion)_
